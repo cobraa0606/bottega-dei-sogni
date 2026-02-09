@@ -160,21 +160,65 @@ h2 {
 /* --- GRIGLIA PRODOTTI --- */
 
 
-.grid {
+/* --- GRIGLIA PRODOTTI (Versione 2x2 Perfetta) --- */
+
+.grid { /* (O .prodotti-grid se hai usato quel nome nell'HTML) */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-}
-#prodotti {
-    background-color: transparent; /* <--- FONDAMENTALE: Toglie il bianco e mostra le strisce */
-    padding: 60px 0; /* Mantiene lo spazio sopra e sotto */
+    gap: 40px; /* Spazio tra le card */
+    
+    /* 1. MOBILE (Schermi piccoli): 1 colonna sola */
+    grid-template-columns: 1fr;
 }
 
-/* Assicuriamoci che le CARD rimangano bianche, altrimenti non si legge il testo sulle strisce */
+/* 2. TABLET E PC (Schermi > 700px): Esattamente 2 colonne */
+@media (min-width: 700px) {
+    .grid { /* (Ricorda di cambiare nome se usi .prodotti-grid) */
+        
+        /* Questo è il comando magico: crea 2 frazioni uguali */
+        grid-template-columns: repeat(2, 1fr); 
+        
+        /* Opzionale: se hai uno schermo ENORME (es. TV) e li vuoi 4 in fila, 
+           puoi aggiungere una media query più grande. 
+           Ma per ora questo ti garantisce il 2x2 che volevi. */
+    }
+}
+/* --- AGGIORNAMENTO CARD PRODOTTI (Più Spazio e Titoli Compatti) --- */
+
 .card {
-    background-color: #ffffff; /* Le schede devono essere bianche */
-    /* ... lascia le altre regole che c'erano (border, padding, ecc.) ... */
-}       
+    background-color: #ffffff;
+    /* 1. RISOLTO: Aumentiamo il padding a 30px. 
+       Così il testo non toccherà mai i bordi, neanche su mobile. */
+    padding: 30px; 
+    
+    border-radius: 15px;
+    border: 3px dashed var(--azzurro); /* Il tuo bordo tratteggiato */
+    text-align: center;
+    transition: all 0.4s ease;
+    overflow: hidden; /* Serve per l'effetto zoom della foto */
+    
+    /* Aggiungi un'ombra leggera di base per staccarle dallo sfondo */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    font-family: var(--font-titoli);
+    
+    /* 2. RISOLTO: Titolo più piccolo e compatto */
+    font-size: 1.6rem; /* Prima era 2rem (troppo grande) */
+    
+    color: var(--azzurro-dark);
+    
+    /* 3. RISOLTO: Avviciniamo il titolo al testo sotto */
+    margin-top: 15px;    /* Spazio dalla foto */
+    margin-bottom: 5px;  /* Spazio ridotto verso la descrizione */
+    line-height: 1.2;    /* Se il titolo va su due righe, le righe sono vicine */
+}
+
+.card p {
+    font-size: 0.95rem;  /* Testo leggermente più piccolo ed elegante */
+    color: #555;         /* Grigio scuro invece di nero (più morbido) */
+    line-height: 1.5;
+}
 
 /* QUESTA CLASSE CREA L'EFFETTO CUCITURA */
 .stitch-border {
@@ -188,12 +232,6 @@ h2 {
     border-color: var(--azzurro-dark);
 }
 
-.card h3 {
-    font-family: var(--font-titoli);
-    font-size: 2rem;
-    color: var(--azzurro-dark);
-    margin-bottom: 10px;
-}
 
 /* --- CONTATTI E FOOTER --- */
 .contact-box {
