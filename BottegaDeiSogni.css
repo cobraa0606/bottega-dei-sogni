@@ -1,0 +1,616 @@
+/* --- COLORI & FONT --- */
+:root {
+    --azzurro: #87CEEB;     /* Il tuo azzurro chiaro */
+    --azzurro-dark: #5dade2; /* Un azzurro più intenso per i bordi */
+    --bianco: #ffffff;
+    --sfondo: #f4f9fc;      /* Un bianco ghiaccio appena sporco di blu */
+    --testo: #34495e;       /* Blu scuro elegante */
+    
+    --font-titoli: 'Dancing Script', cursive; /* Font "scritto a mano" */
+    --font-testo: 'Quicksand', sans-serif;    /* Font rotondo e leggibile */
+}
+
+/* --- RESET BASE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    /* Colore di base */
+    background-color: var(--sfondo);
+    color: var(--testo);
+    font-family: var(--font-testo);
+    font-size: 18px;
+    line-height: 1.6;
+
+    /* --- SFONDO A STRISCE GLOBALE --- */
+    background-image: repeating-linear-gradient(
+        45deg,
+        var(--sfondo),
+        var(--sfondo) 10px,
+        #eef6fa 20px, /* Un azzurrino chiarissimo */
+        #eef6fa 20px
+    );
+    
+    /* TRUCCO PRO: Lo sfondo resta fermo mentre scorri */
+    background-attachment: fixed; 
+}
+
+/* --- HEADER & LOGO --- */
+header {
+    background-color: var(--bianco);
+    padding: 20px 0;
+    border-bottom: 5px solid var(--azzurro); /* Bordo colorato sotto al menu */
+    text-align: center;
+}
+
+.header-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#main-logo {
+    max-width: 200px; /* Regola questa dimensione in base al tuo logo */
+    height: auto;
+    border-radius: 10px; /* Angoli del logo smussati */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--testo);
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--azzurro-dark);
+    border-bottom: 2px solid var(--azzurro);
+}
+
+/* --- HERO SECTION (Semplice e diretta) --- */
+#hero {
+    background-color: var(--bianco);
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 2px dashed var(--azzurro); /* EFFETTO CUCITURA */
+}
+
+h1 {
+    font-family: var(--font-titoli);
+    font-size: 3.5rem; /* Titolo grande */
+    color: var(--azzurro-dark);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.divider {
+    font-size: 2rem;
+    color: var(--azzurro);
+    margin: 20px 0;
+}
+
+.btn {
+    background-color: var(--azzurro);
+    color: var(--bianco);
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Ombra sotto il bottone */
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--azzurro-dark);
+    transform: scale(1.05); /* Si ingrandisce leggermente */
+}
+
+/* --- EFFETTO CARTA --- */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding { padding: 60px 0; }
+
+.paper-effect {
+    background: #fff;
+    padding: 40px;
+    border: 1px solid #ddd;
+    box-shadow: 5px 5px 0px var(--azzurro); /* Ombra solida azzurra */
+    text-align: center;
+}
+
+h2 {
+    font-family: var(--font-titoli);
+    font-size: 2.8rem;
+    color: var(--testo);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* --- IMMAGINI NELLE CARD --- */
+.card-img {
+    width: 100%;            /* Occupa tutta la larghezza della card */
+    height: 200px;          /* Altezza fissa per tenerle tutte uguali */
+    object-fit: cover;      /* Taglia l'immagine se è troppo grande senza deformarla */
+    border-radius: 10px;    /* Arrotonda gli angoli */
+    margin-bottom: 15px;    /* Spazio tra foto e titolo */
+    border: 1px solid #ddd; /* Un bordino leggero attorno alla foto */
+}
+
+/* --- GRIGLIA PRODOTTI --- */
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+#prodotti {
+    background-color: transparent; /* <--- FONDAMENTALE: Toglie il bianco e mostra le strisce */
+    padding: 60px 0; /* Mantiene lo spazio sopra e sotto */
+}
+
+/* Assicuriamoci che le CARD rimangano bianche, altrimenti non si legge il testo sulle strisce */
+.card {
+    background-color: #ffffff; /* Le schede devono essere bianche */
+    /* ... lascia le altre regole che c'erano (border, padding, ecc.) ... */
+}       
+
+/* QUESTA CLASSE CREA L'EFFETTO CUCITURA */
+.stitch-border {
+    border: 3px dashed var(--azzurro);
+    border-radius: 15px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-color: var(--azzurro-dark);
+}
+
+.card h3 {
+    font-family: var(--font-titoli);
+    font-size: 2rem;
+    color: var(--azzurro-dark);
+    margin-bottom: 10px;
+}
+
+/* --- CONTATTI E FOOTER --- */
+.contact-box {
+    background: var(--bianco);
+    padding: 30px;
+    text-align: center;
+}
+
+footer {
+    background-color: var(--testo);
+    color: var(--bianco);
+    text-align: center;
+    padding: 30px;
+    font-size: 0.9rem;
+}
+
+/* --- FOOTER & CONTATTI (Versione Centrata) --- */
+footer {
+    background-color: var(--testo); /* Blu scuro */
+    color: var(--bianco);
+    padding: 60px 0 20px 0;
+    text-align: center; /* <-- QUESTO CENTRA TUTTI I TESTI */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* <-- QUESTO CENTRA LE COLONNE NELLA PAGINA */
+    gap: 50px; /* Spazio abbondante tra le colonne */
+}
+
+.footer-col {
+    flex: 1; /* Le colonne prendono lo stesso spazio */
+    min-width: 250px; /* Non diventano mai troppo piccole */
+    max-width: 350px;
+}
+
+.footer-col h3 {
+    font-family: var(--font-titoli);
+    font-size: 2rem;
+    color: var(--azzurro);
+    margin-bottom: 25px;
+}
+
+/* LISTA CONTATTI */
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* <-- FONDAMENTALE: Centra icona e testo insieme */
+    gap: 15px;
+}
+
+.contact-list a {
+    color: var(--bianco);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact-list a:hover {
+    color: var(--azzurro);
+    text-decoration: underline;
+}
+
+/* ICONE SOCIAL */
+.social-icons {
+    display: flex;
+    justify-content: center; /* <-- Centra le icone social */
+    gap: 20px;
+}
+
+.social-icons a {
+    background-color: rgba(255,255,255,0.1);
+    color: var(--bianco);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    background-color: var(--azzurro);
+    transform: translateY(-5px) scale(1.1); /* Effetto pop leggermente più grande */
+}
+
+/* COPYRIGHT IN FONDO */
+.copyright {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+    color: #8898aa; /* Grigio chiaro elegante */
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center; /* Assicura che su mobile sia tutto al centro */
+        gap: 40px;
+    }
+}
+
+/* Stile specifico per la lista orari */
+.orari-list {
+    list-style: none; /* Toglie i pallini */
+    padding: 0;
+    font-size: 0.95rem;
+}
+
+.orari-list li {
+    margin-bottom: 15px; /* Spazio tra i giorni */
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* Righetta sottile separatoria */
+    padding-bottom: 5px;
+}
+
+.orari-list strong {
+    color: var(--azzurro); /* Giorni in azzurro */
+    display: block; /* Mette il giorno sopra e l'orario sotto */
+    margin-bottom: 2px;
+}   
+
+/* --- AGGIUSTAMENTI SPECIFICI PER MOBILE --- */
+
+/* Quando lo schermo è più stretto di 768px (tablet e cellulari) */
+@media (max-width: 768px) {
+    
+    /* Rimpiccioliamo il logo */
+    #main-logo {
+        max-width: 150px; /* Era 200px su desktop. Proviamo 150px. */
+    }
+
+    /* Già che ci siamo, riduciamo un po' anche il titolo principale che spesso su mobile va a capo male */
+    h1 {
+        font-size: 2.5rem; /* Era 3.5rem */
+    }
+}
+
+/* --- LAYOUT DESKTOP FULL WIDTH --- */
+@media (min-width: 769px) {
+    
+    /* 1. Sblocchiamo la larghezza del contenitore SOLO nell'header */
+    header .container {
+        max-width: 100%;    /* Occupa tutto lo schermo */
+        padding: 0 50px;    /* Lascia un po' di aria dai bordi del monitor */
+    }
+
+    /* 2. Disponiamo Logo e Menu agli estremi opposti */
+    .header-layout {
+        display: flex;
+        flex-direction: row;            /* Mette gli elementi in riga orizzontale */
+        justify-content: space-between; /* <--- QUESTO è il comando chiave: spinge A e B agli estremi */
+        align-items: center;            /* Centra verticalmente (così il menu non è più alto del logo) */
+    }
+
+    /* 3. Sistemiamo il menu */
+    nav ul {
+        margin-top: 0;
+        gap: 40px; /* Più spazio tra le voci del menu */
+    }
+
+    /* 4. Dimensione logo Desktop */
+    #main-logo {
+        max-width: 180px; 
+    }
+}
+
+/* --- HERO SLIDER --- */
+#hero-slider {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Alto l'80% dello schermo, molto impattante */
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex; /* Flexbox per centrare il testo */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0; /* Di base sono invisibili */
+    transition: opacity 1s ease-in-out; /* Effetto dissolvenza elegante */
+}
+
+/* La classe .active rende visibile la slide corrente */
+.slide.active {
+    opacity: 1;
+}
+
+/* --- CORREZIONE HERO CONTENT --- */
+.hero-content {
+    background: rgba(255, 255, 255, 0.9); /* Sfondo bianco un po' più solido */
+    padding: 40px 50px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    max-width: 700px;
+    
+    /* QUESTA È LA PARTE CHE RISOLVE IL PROBLEMA: */
+    display: flex;           /* Attiva il layout intelligente */
+    flex-direction: column;  /* Ordina tutto in verticale (uno sotto l'altro) */
+    align-items: center;     /* Centra tutto orizzontalmente */
+    gap: 20px;               /* Mette 20px di spazio automatico tra Titolo, Testo e Bottone */
+}
+
+/* Assicuriamoci che i margini vecchi non diano fastidio */
+.hero-content h1 {
+    margin: 0; /* Toglie margini extra al titolo */
+    line-height: 1.2;
+}
+
+.hero-content p {
+    margin: 0; /* Toglie margini extra al paragrafo */
+}
+
+.hero-content .btn {
+    margin-top: 10px; /* Un po' di aria in più sopra il bottone se serve */
+}
+
+/* Pulsanti frecce */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.prev-btn:hover, .next-btn:hover { background: var(--azzurro); }
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
+
+/* --- OTTIMIZZAZIONE SLIDER MOBILE --- */
+@media (max-width: 768px) {
+    
+    .hero-content {
+        /* 1. Riduciamo drasticamente lo spazio interno (padding) */
+        padding: 20px 15px; 
+        
+        /* 2. Rendiamo lo sfondo più trasparente (0.8 invece di 0.9) così si vede la foto sotto */
+        background: rgba(255, 255, 255, 0.8); 
+        
+        /* 3. Stringiamo la larghezza massima */
+        width: 85%; 
+        margin: 0 auto; /* Assicura che resti centrato */
+        
+        /* 4. Riduciamo lo spazio tra gli elementi interni */
+        gap: 10px;
+    }
+
+    /* Rimpiccioliamo il testo per non occupare tutto lo schermo */
+    .hero-content h1 {
+        font-size: 2rem; /* Titolo più piccolo */
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Testo più piccolo */
+        line-height: 1.3;
+    }
+
+    .hero-content .btn {
+        padding: 8px 20px; /* Bottone più compatto */
+        font-size: 0.9rem;
+    }
+}
+
+/* --- MIGLIORAMENTO CARD PRODOTTI (Effetto Zoom) --- */
+
+/* 1. Prepariamo la card a contenere l'effetto */
+.card {
+    transition: all 0.4s ease; /* Rende tutti i movimenti fluidi */
+    overflow: hidden; /* Fondamentale: se la foto si ingrandisce, non esce dai bordi */
+}
+
+/* 2. Regole specifiche per l'immagine dentro la card */
+.card-img {
+    transition: transform 0.5s ease; /* L'immagine si muove più lentamente della card */
+    width: 100%;
+    /* Assicuriamoci che l'immagine riempia bene lo spazio */
+    display: block; 
+}
+
+/* 3. COSA SUCCEDE QUANDO PASSI IL MOUSE (HOVER) */
+.card:hover {
+    transform: translateY(-10px); /* La card sale verso l'alto */
+    box-shadow: 0 15px 30px rgba(135, 206, 235, 0.3); /* Ombra azzurra luminosa sotto */
+    border-style: solid; /* Il bordo tratteggiato diventa solido e deciso */
+    border-color: var(--azzurro-dark);
+}
+
+.card:hover .card-img {
+    transform: scale(1.1); /* L'immagine si ingrandisce del 10% (Zoom In) */
+}
+
+/* --- INFINITE LOGO SLIDER (LOOP FIX) --- */
+#partners {
+    padding: 30px 0;
+    background-color: white;
+    overflow: hidden; /* Nasconde ciò che esce */
+    position: relative;
+    border-bottom: 1px solid #eee;
+}
+
+.logos-container {
+    display: flex;
+    width: 100%;
+    /* Questo assicura che non ci siano spazi strani tra le due strisce */
+    white-space: nowrap; 
+}
+
+.logos-slide {
+    display: flex;
+    align-items: center;
+    /* L'animazione muove la striscia verso sinistra */
+    animation: scroll 35s linear infinite;
+}
+
+/* Stile loghi */
+.logos-slide img {
+    height: 60px; /* Altezza loghi */
+    margin: 0 50px; /* Spazio abbondante tra i loghi */
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: 0.3s;
+    /* Importante: impedisce che i loghi vengano schiacciati */
+    flex-shrink: 0; 
+}
+
+.logos-slide img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* IL MOTORE DEL LOOP */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        /* Sposta la striscia esattamente della sua intera lunghezza */
+        transform: translateX(-100%);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .logos-slide img {
+        height: 40px;
+        margin: 0 25px;
+    }
+}
+
+
+/* --- BOTTONE WHATSAPP FLUTTUANTE --- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    
+    /* Per centrare l'icona */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    transition: all 0.3s ease;
+
+    /* --- AGGIUNGI QUESTA RIGA FONDAMENTALE: --- */
+    text-decoration: none !important; /* Toglie la striscia sotto */
+}
+
+/* Effetto quando passi il mouse */
+.whatsapp-float:hover {
+    background-color: #128c7e; /* Verde più scuro */
+    transform: scale(1.1); /* Si ingrandisce un po' */
+    color: white;
+}
+
+/* MOBILE: Lo facciamo un po' più piccolo per non coprire troppo */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 28px;
+    }
+}

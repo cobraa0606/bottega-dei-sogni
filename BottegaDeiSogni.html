@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bottega Dei Sogni - Sassuolo</title>
+    <link rel="stylesheet" href="BottegaDeiSogni.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container header-layout">
+            <div class="logo-container">
+                <img src="logo.jpg" alt="Logo Bottega Dei Sogni" id="main-logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#chi-siamo">La Bottega</a></li>
+                    <li><a href="#prodotti">Prodotti</a></li>
+                    <li><a href="#contatti">Dove Siamo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero-slider">
+        <div class="slider-wrapper">
+
+            <div class="slide active" style="background-image: url('slide1.jpg');">
+                <div class="hero-content">
+                    <h1>Tradizione e Qualità</h1>
+                    <p>Dal cuore di Sassuolo, la tua merceria di fiducia.</p>
+                    <a href="#chi-siamo" class="btn">Scopri di più</a>
+                </div>
+            </div>
+
+            <div class="slide" style="background-image: url('slide2.jpg');">
+                <div class="hero-content">
+                    <h1>Filati Pregiati</h1>
+                    <p>DMC, Rowan e le migliori lane per le tue creazioni.</p>
+                    <a href="#prodotti" class="btn">Guarda i filati</a>
+                </div>
+            </div>
+
+            <div class="slide" style="background-image: url('slide3.jpg');">
+                <div class="hero-content">
+                    <h1>Intimo ed Eleganza</h1>
+                    <p>Comfort e stile con le nostre linee esclusive.</p>
+                    <a href="#contatti" class="btn">Vienici a trovare</a>
+                </div>
+            </div>
+
+        </div>
+
+        <section id="partners">
+            <div class="logos-container">
+
+                <div class="logos-slide">
+                    <img src="logo-dmc.jpg" alt="DMC">
+                    <img src="logo-rowan.jpg" alt="Rowan">
+                    <img src="logo-adriafil.jpg" alt="Adriafil"> 
+                    <img src="logo-renkalik.jpg" alt="Renkalik">
+
+                    <img src="logo-dmc.jpg" alt="DMC">
+                    <img src="logo-rowan.jpg" alt="Rowan">
+                    <img src="logo-adriafil.jpg" alt="Adriafil">
+                    <img src="logo-renkalik.jpg" alt="Renkalik">
+
+                    <img src="logo-dmc.jpg" alt="DMC">
+                    <img src="logo-rowan.jpg" alt="Rowan">
+                    <img src="logo-adriafil.jpg" alt="Adriafil">
+                    <img src="logo-renkalik.jpg" alt="Renkalik">
+                </div>
+            
+                <div class="logos-slide">
+                    <img src="logo-dmc.jpg" alt="DMC">
+                    <img src="logo-rowan.jpg" alt="Rowan">
+                    <img src="logo-adriafil.jpg" alt="Adriafil">
+                    <img src="logo-renkalik.jpg" alt="Renkalik">
+
+                    <img src="logo-dmc.jpg" alt="DMC">
+                    <img src="logo-rowan.jpg" alt="Rowan">
+                    <img src="logo-adriafil.jpg" alt="Adriafil">
+                    <img src="logo-renkalik.jpg" alt="Renkalik">
+
+                    <img src="logo-dmc.jpg" alt="DMC">
+                    <img src="logo-rowan.jpg" alt="Rowan">
+                    <img src="logo-adriafil.jpg" alt="Adriafil">
+                    <img src="logo-renkalik.jpg" alt="Renkalik">
+                </div>
+            
+            </div>
+        </section>
+
+        <button class="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next-btn" onclick="changeSlide(1)">&#10095;</button>
+    </section>
+
+    <section id="chi-siamo" class="container section-padding">
+        <div class="paper-effect">
+            <h2>La nostra storia</h2>
+            <p>Bottega Dei Sogni è molto più di un negozio: è un punto di riferimento a Sassuolo noto per la <strong>disponibilità e la cortesia</strong>.</p>
+            <p>Offriamo una selezione curata di filati, intimo e tutto il necessario per i tuoi hobby creativi, con un servizio attento e personale.</p>
+        </div>
+    </section>
+
+    <section id="prodotti" class="bg-pattern section-padding">
+        <div class="container">
+            <h2>Il nostro assortimento</h2>
+
+            <div class="grid">
+                <div class="card stitch-border">
+                    <img src="merceria.jpg" alt="Filati e Merceria Sassuolo" class="card-img">
+                    <h3>🧶 Merceria & Hobby</h3>
+                    <p>Filati <strong>DMC, Rowan e Lane</strong>. Accessori per cucito, uncinetto, ferri da maglia e prodotti esclusivi <strong>Renkalik</strong>.</p>
+                </div>
+            
+                <div class="card stitch-border">
+                    <img src="intimo.jpg" alt="Intimo Donna Bambino Sassuolo" class="card-img">
+                    <h3>👙 Intimo & Costumi</h3>
+                    <p>Biancheria intima per donna e bambino (inclusa la linea <strong>Loana</strong>), costumi da bagno e accessori moda.</p>
+                </div>
+            
+                <div class="card stitch-border">
+                    <img src="regalo.jpg" alt="Idee Regalo e Confezioni" class="card-img">
+                    <h3>🎁 Regali & Servizi</h3>
+                    <p>Idee regalo uniche per ogni occasione. Effettuiamo <strong>confezionamento regali</strong> in loco con cura artigianale.</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="contatti" class="container section-padding">
+        <div class="contact-box stitch-border">
+            <h2>Passa a salutarci</h2>
+            <p>Piazza Martiri Partigiani, 84/85 - Sassuolo</p>
+            
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2870.56789!2d10.78!3d44.54!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDMyJzI0LjAiTiAxMMKwNDYnNDguMCJF!5e0!3m2!1sit!2sit!4v1600000000000!5m2!1sit!2sit" 
+                width="100%" 
+                height="300" 
+                style="border:0; margin-top: 20px;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container footer-content">
+
+            <div class="footer-col">
+                <h3>Orari Apertura</h3>
+                <ul class="orari-list">
+                    <li><strong>Lun - Mer:</strong><br>08:30–12:30 / 15:30–19:30</li>
+                    <li><strong>Giovedì:</strong><br>08:30–12:30 <span style="color: #ffb3b3;">(Pom. Chiuso)</span></li>
+                    <li><strong>Ven - Sab:</strong><br>08:30–12:30 / 15:30–19:30</li>
+                    <li><strong>Domenica:</strong><br>Chiuso</li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contattaci</h3>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fas fa-phone"></i> 
+                        <a href="tel:+39 328 912 3151"> 328 912 3151</a>
+                    </li>
+                    <li>
+                        <i class="fab fa-whatsapp"></i> 
+                        <a href="https://wa.me/393289123151">Scrivici su WhatsApp</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Seguici</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/p/Bottega-Dei-Sogni-Sassuolo" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9rem; color: #aaa;">
+                    Confezionamento regali<br>disponibile in negozio.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2017 Bottega Dei Sogni - Sassuolo.</p>
+        </div>
+    </footer>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        // Funzione per cambiare slide automaticamente
+        function showSlide(index) {
+            // Rimuovi 'active' da tutte
+            slides.forEach(slide => slide.classList.remove('active'));
+
+            // Calcola l'indice corretto (se arrivi alla fine, ricomincia)
+            if (index >= totalSlides) currentSlide = 0;
+            else if (index < 0) currentSlide = totalSlides - 1;
+            else currentSlide = index;
+        
+            // Aggiungi 'active' a quella giusta
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Funzione per i pulsanti
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        // Cambio automatico ogni 5 secondi
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+    </script>
+        <a href="https://wa.me/393330000000" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>
