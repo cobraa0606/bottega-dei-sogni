@@ -652,3 +652,85 @@ footer {
         font-size: 28px;
     }
 }
+
+/* --- NUOVO LAYOUT CHI SIAMO (Story) --- */
+
+/* Il contenitore principale diventa flessibile */
+.story-layout {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    gap: 40px; /* Spazio tra foto e testo */
+    text-align: left; /* Il testo torna allineato a sinistra, più leggibile */
+    overflow: hidden; /* Per arrotondare anche l'immagine */
+}
+
+/* Gestione Immagine */
+.story-image {
+    flex: 1; /* Prende il 50% dello spazio */
+}
+
+.story-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+    transform: rotate(-2deg); /* Un tocco artistico: foto leggermente storta */
+    border: 5px solid white; /* Effetto polaroid */
+}
+
+/* Gestione Testo */
+.story-text {
+    flex: 1; /* Prende l'altro 50% */
+}
+
+.story-text h2 {
+    text-align: left; /* Titolo a sinistra */
+    margin-bottom: 20px;
+    color: var(--azzurro-dark);
+}
+
+.firma {
+    margin-top: 20px;
+    font-family: var(--font-titoli);
+    font-size: 1.5rem;
+    color: var(--azzurro);
+}
+
+/* MOBILE: Su schermi piccoli, torna tutto in colonna */
+@media (max-width: 768px) {
+    .story-layout {
+        flex-direction: column; /* Uno sopra l'altro */
+        text-align: center;
+    }
+    
+    .story-text h2 {
+        text-align: center;
+    }
+    
+    .story-image img {
+        transform: rotate(0deg); /* Raddrizziamo la foto su mobile */
+        max-width: 80%; /* Non troppo gigante */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Header più sottile su mobile */
+    header {
+        padding: 5px 0; 
+    }
+    
+    /* Logo più piccolo per non disturbare */
+    #main-logo {
+        max-width: 120px; 
+    }
+
+    /* Menu più compatto */
+    nav ul {
+        gap: 15px;      /* Meno spazio tra le parole */
+        margin-top: 5px;
+    }
+    
+    nav a {
+        font-size: 0.9rem; /* Testo leggermente più piccolo */
+    }
+}
