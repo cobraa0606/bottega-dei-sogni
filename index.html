@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bottega Dei Sogni - Sassuolo</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="BottegaDeiSogni.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
@@ -102,10 +103,25 @@
     </section>
 
     <section id="chi-siamo" class="container section-padding">
-        <div class="paper-effect">
-            <h2>La nostra storia</h2>
-            <p>Bottega Dei Sogni è molto più di un negozio: è un punto di riferimento a Sassuolo noto per la <strong>disponibilità e la cortesia</strong>.</p>
-            <p>Offriamo una selezione curata di filati, intimo e tutto il necessario per i tuoi hobby creativi, con un servizio attento e personale.</p>
+        <div class="paper-effect story-layout">
+
+            <div class="story-image" data-aos="fade-right">
+                <img src="foto2.jpeg" alt="Interno Bottega dei Sogni">
+            </div>
+            
+
+            <div class="story-text" data-aos="fade-left">
+                <h2>La nostra storia</h2>
+                <p><strong>Bottega Dei Sogni</strong> è molto più di un negozio: è un punto di riferimento a Sassuolo, nato dalla passione per le cose fatte a mano.</p>
+                <p>Da noi non trovi solo filati, ma un sorriso, un consiglio esperto e quella cortesia di una volta che fa sentire a casa.</p>
+                <p>Selezioniamo personalmente <em>DMC, Rowan</em> e i migliori marchi italiani per garantire che ogni tua creazione sia un piccolo capolavoro.</p>
+
+                <div class="firma">
+                    <p>Ti aspettiamo,</p>
+                    <span class="firma-nome">Debora</span>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -114,26 +130,26 @@
             <h2>Il nostro assortimento</h2>
 
             <div class="grid">
-                <div class="card stitch-border">
+                <div class="card stitch-border" data-aos="fade-up">
                     <img src="merceria.jpg" alt="Filati e Merceria Sassuolo" class="card-img">
                     <h3>🧶 Merceria & Accessori Borse</h3>
                     <p>Filati <strong>DMC, Rowan e Lane</strong>. Accessori per cucito, bottoni, uncinetto, ferri da maglia e prodotti esclusivi <strong>Renkalik</strong>.</p>
                 </div>
 
-                <div class="card">
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
                     <div class="card-image-box"> <img src="foto12.jpeg" alt="Corredino e Infanzia" class="card-img">
                     </div>
                     <h3>Infanzia & Scuola</h3>
                     <p>Tutto per i piccoli: sacchi nanna, bavaglini da ricamare, fiocchi nascita e idee regalo uniche.</p>
                 </div>
             
-                <div class="card stitch-border">
+                <div class="card stitch-border" data-aos="fade-up" data-aos-delay="200">
                     <img src="foto5.jpeg" alt="Intimo Donna Sassuolo" class="card-img">
                     <h3>👙 Intimo Donna & Costumi</h3>
                     <p>Biancheria intima per donna, costumi da bagno e accessori moda.</p>
                 </div>
             
-                <div class="card stitch-border">
+                <div class="card stitch-border" data-aos="fade-up" data-aos-delay="300">
                     <img src="regalo.jpg" alt="Idee Regalo e Confezioni" class="card-img">
                     <h3>🎁 Regali & Servizi</h3>
                     <p>Idee regalo uniche per ogni occasione. Effettuiamo <strong>confezionamento regali</strong> in loco con cura artigianale.</p>
@@ -144,7 +160,7 @@
     </section>
 
     <section id="contatti" class="container section-padding">
-        <div class="contact-box stitch-border">
+        <div class="contact-box stitch-border" data-aos="zoom-in">
             <h2>Passa a salutarci</h2>
             <p>Piazza Martiri Partigiani, 84/85 - Sassuolo</p>
             
@@ -207,6 +223,15 @@
             <p>&copy; 2017 Bottega Dei Sogni - Sassuolo.</p>
         </div>
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          duration: 1000, /* Durata animazione in millisecondi */
+          once: true,     /* L'animazione avviene solo la prima volta che scorri */
+      });
+    </script>
+
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
@@ -240,6 +265,4 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 </body>
-</html>
-
-
+</html> 
